@@ -1,0 +1,23 @@
+{
+  "name": "angular-shopping-cart",
+  "version": "1.0.0",
+  "description": "Shopping Cart App Built with Angular",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bradford-hamilton/angular-shopping-cart.git"
+  },
+  "author": "Bradford Lamson-Scribner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bradford-hamilton/angular-shopping-cart/issues"
+  },
+  "homepage": "https://github.com/bradford-hamilton/angular-shopping-cart#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
