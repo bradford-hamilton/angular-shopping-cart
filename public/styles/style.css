@@ -1,0 +1,44 @@
+body {
+  background-color: #f9f4e6
+}
+
+.hero {
+  background-color: #73c3fc;
+
+}
+
+.padding {
+  padding-left: 9rem;
+  padding-right: 9rem;
+}
+
+div {
+  /*border: 1px solid black;*/
+}
+
+.table-top-names {
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+
+li {
+  list-style: none;
+}
+
+.light-grey-borders {
+  border: 2px solid #aaaaaa;
+  padding: 2rem;
+  border-radius: 2px;
+}
+
+.margin-top {
+  margin-top: 10rem;
+}
+
+.bullet-list {
+  list-style-type: circle;
+}
+
+.padding-left {
+  padding-left: 1.7rem;
+}

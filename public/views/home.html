@@ -1,0 +1,85 @@
+<div class="padding">
+  <div class="container-fluid">
+    <div class="col-lg-12 table-top-names">
+      <span>
+        <label for="searchByCategory">Search by Category</label>
+        <select id='searchByCategory' ng-model='category'>
+          <option value='dark'>Dark</option>
+          <option value='cold'>Cold</option>
+          <option value='awesome'>Awesome</option>
+          <option value='dry'>Dry</option>
+          <option value='hot'>Hot</option>
+          <option value='summer'>Summer</option>
+          <option value='lucid'>Lucid</option>
+          <option value='warm'>Warm</option>
+          <option value='winter'>Winter</option>
+          <option value='spring'>Spring</option>
+        </select>
+
+        <label for="searchByName">Search by name: </label>
+        <input type='text' id='searchByName' ng-model='searchText'>
+
+        <button type="button" class='btn btn-danger pull-right'>Checkout | Bag: {{  }}</button>
+      </span>
+    </div>
+
+    <div class="row margin-top">
+      <div class="col-lg-3">
+        <h4 class='padding-left'>Tea</h4>
+      </div>
+
+      <div class="col-lg-9">
+        <div class="col-lg-9">
+          <h4 class='padding-left'>Information</h4>
+        </div>
+
+        <div class="col-lg-3">
+          <span class='pull-right'>
+            <label for='searchByPrice'>Sort by Price: </label>
+            <select id='searchByPrice' ng-model='price'>
+              <option value='price'>Low to High</option>
+              <option value='-price'>High to Low</option>
+            </select>
+          </span>
+        </div>
+      </div>
+
+    </div>
+    <!-- Angular data below -->
+
+    <ul ng-repeat='item in teaData | orderBy: price | orderBy: category | filter: searchText' class='light-grey-borders' >
+      <div class="row">
+        <div class="col-lg-3">
+          <li><img ng-src="{{ item.imageUrl }}" alt="No Photo Available"></li>
+        </div>
+        <div class="col-lg-9">
+          <div class="col-lg-8">
+            <li><h3>{{ item.name }}</h3></li>
+            <li><p>Price: {{ item.price }}</p></li>
+            <li><p>Caffeine Scale: {{ item.caffeineScale }}</p></li>
+            <li><p>Ingredients: {{ item.ingredients }}</p></li>
+            <li><p>Rating: {{ item.rating }}</p></li>
+            <li><p>In stock: {{ item.inStock }}</p></li>
+            <ul ng-repeat='category in item.categories'>
+              <li class='bullet-list'>{{ category }}</li>
+            </ul>
+          </div>
+          <div class="col-lg-4">
+            <span class='pull-right'>
+              <label for="quantity">Quantity</label>
+              <select id="quantity" ng-model='item.quantity'>
+                <option value='1'></option>
+                <option value='1'>1</option>
+                <option value='2'>2</option>
+                <option value='3'>3</option>
+              </select>
+              <button type="button" class="btn btn-warning" ng-click='addToBag(item)'>Add to Bag</button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </ul>
+
+
+  </div>
+</div>

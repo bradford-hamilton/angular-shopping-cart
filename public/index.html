@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Angular Shopping Cart</title>
+  <link href="https://fonts.googleapis.com/css?family=Gentium+Basic|Raleway:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Noticia+Text" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="/">
+</head>
+  <body ng-app='shoppingCart'>
+
+    <div class="container-fluid hero">
+      <div class="row col-lg-12">
+        <h3 class='text-center'>I don't always drink tea but when I do, I drink MEAN Tea</h3>
+      </div>
+    </div>
+
+    <div class="padding">
+      <div class="container-fluid">
+        <div class="rol-col-lg-12">
+          <h1>Welcome to MEAN Tea!</h1>
+        </div>
+      </div>
+
+      <nav class='navbar navbar-default'>
+        <div class="container-fluid">
+          <ul class="nav navbar-nav">
+            <li><a href=""> Home </a></li>
+            <li><a href=""> About </a></li>
+            <li><a href=""> Contact </a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <main>
+      <div ui-view></div>
+    </main>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.0.0/ui-bootstrap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-animate.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-touch.min.js"></script>
+    <script src="./app.js"></script>
+    <script src="./scripts/data.js"></script>
+    <script src="./scripts/controllers/MainController.js"></script>
+    <!-- <script src="./scripts/controllers/ShowController.js"></script> -->
+  </body>
+</html>
