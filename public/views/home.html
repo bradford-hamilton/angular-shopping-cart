@@ -19,7 +19,7 @@
         <label for="searchByName">Search by name: </label>
         <input type='text' id='searchByName' ng-model='searchText'>
 
-        <button type="button" class='btn btn-danger pull-right'>Checkout | Bag: {{ view.totalQuantity() }}</button>
+        <button type="button" class='btn btn-danger pull-right' ui-sref='checkout'>Checkout | Bag: {{ totalQuantity() }}</button>
       </span>
     </div>
 

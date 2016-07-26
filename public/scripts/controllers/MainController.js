@@ -1,13 +1,16 @@
-app.controller('MainController', ["$scope", "$http", "$stateParams", "ShoppingCart", function($scope, $http, $stateParams, ShoppingCart) {
-  $scope.view = {};
-  $scope.teaData = dataArray;
+angular
+  .module('shoppingCart')
 
-  $scope.view.totalQuantity = function() {
-    return ShoppingCart.getCheckoutQuantity();
-  };
+  .controller('MainController', ["$scope", "$stateParams", "ShoppingCart", function($scope, $stateParams, ShoppingCart) {
+    $scope.view = {};
+    $scope.teaData = dataArray;
 
-  $scope.addToBag = function(item) {
-    ShoppingCart.addToBag(item);
-  };
+    $scope.totalQuantity = function() {
+      return ShoppingCart.getCheckoutQuantity();
+    };
 
-}]);
+    $scope.addToBag = function(item) {
+      ShoppingCart.addToBag(item);
+    };
+
+  }]);
