@@ -7,11 +7,11 @@ app.config(["$stateProvider", "$urlRouterProvider", "$locationProvider", functio
       url: '/',
       controller: 'MainController',
       templateUrl: 'views/home.html'
+    })
+    .state('checkout', {
+      url: '/checkout',
+      controller: 'CheckoutController',
+      templateUrl: 'views/checkout.html'
     });
-    // .state('show', {
-    //   url: '/show/:movieId',
-    //   controller: 'ShowController',
-    //   templateUrl: 'views/show.html'
-    // });
     $locationProvider.html5Mode(true);
 }]);
