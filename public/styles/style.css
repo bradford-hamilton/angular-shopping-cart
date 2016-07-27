@@ -1,10 +1,10 @@
 body {
-  background-color: #f9f4e6
+  background-color: #E9EBEE
 }
 
 .hero {
-  background-color: #73c3fc;
-
+  background-color: #3B5998;
+  color: #ffffff;
 }
 
 .padding {
@@ -13,7 +13,11 @@ body {
 }
 
 div {
-  border: 1px solid black;
+  /*border: 1px solid black;*/
+}
+
+.div-background {
+  background-color: #ffffff
 }
 
 .table-top-names {
@@ -45,4 +49,16 @@ li {
 
 .checkout-margin-top {
   margin-top: 4rem;
+}
+
+.ingredients-checkout {
+  margin-top: 5rem;
+}
+
+.left-border {
+  border-left: 2px solid #aaaaaa;;
+}
+
+.no-padding {
+  padding-bottom: none;
 }

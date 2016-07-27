@@ -4,9 +4,18 @@ angular
   .factory('ShoppingCart', function() {
     var ShoppingCart = {};
     var items = [];
+    var itemsTotal = 0;
 
     ShoppingCart.getItems = function() {
+      console.log(items);
       return items;
+    };
+
+    ShoppingCart.getItemsTotal = function() {
+      items.forEach(function(item) {
+        itemsTotal += (item.price * item.quantity);
+      });
+      console.log(itemsTotal);
     };
 
     ShoppingCart.getCheckoutQuantity = function() {
@@ -27,7 +36,10 @@ angular
           name: item.name,
           quantity: Number(item.quantity) || 1,
           price: item.price,
-          imageUrl: item.imageUrl
+          imageUrl: item.imageUrl,
+          caffeineScale: item.caffeineScale,
+          ingredients: item.ingredients,
+          rating: item.rating
         });
       }
     };

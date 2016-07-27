@@ -15,6 +15,8 @@ angular
 
     $scope.checkoutItems = ShoppingCart.getItems();
 
+    $scope.getItemsTotal = ShoppingCart.getItemsTotal();
+
     $scope.removeFromBag = function(item) {
       ShoppingCart.removeFromBag(item);
     };

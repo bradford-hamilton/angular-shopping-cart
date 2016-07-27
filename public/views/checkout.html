@@ -6,7 +6,7 @@
         <h2>My Shopping Cart</h2>
       </div>
       <div class="col-lg-6 pull-right">
-        <h2>Order Total: {{  }}</h2>
+        <h2>Order Total: {{ itemsTotal }}</h2>
       </div>
     </div>
 
@@ -32,15 +32,23 @@
     </div>
     <!-- Angular data below -->
 
-    <ul ng-repeat='item in checkoutItems' class='light-grey-borders' >
+    <ul ng-repeat='item in checkoutItems' class='light-grey-borders no-padding div-background' >
       <div class="row">
 
-        <div class="col-lg-6">
-          <h4 class='padding-left'>{{ item.name }}</h4>
+        <div class="col-lg-3">
+          <h3 class='padding-left'>{{ item.name }}</h3>
           <img ng-src="{{ item.imageUrl }}" alt="" />
         </div>
 
-        <div class="col-lg-2">
+        <div class="col-lg-3 ingredients-checkout">
+          <h4>Caffeine Scale: {{ item.caffeineScale }}</h4>
+          <br>
+          <h4>Ingredients: {{ item.ingredients }}</h4>
+          <br>
+          <h4>Rating: {{ item.rating }}</h4>
+        </div>
+
+        <div class="col-lg-2 left-border">
 
           <h4 ng-hide='edit' class='padding-left'>{{ item.quantity }}</h4>
 
@@ -55,13 +63,13 @@
 
         </div>
 
-        <div class="col-lg-2">
-          <h4>{{ item.quantity * item.price }}</h4>
+        <div class="col-lg-2 left-border">
+          <h4>{{ item.quantity * item.price | CurrencyFilter | currency }}</h4>
         </div>
 
-        <div class="col-lg-2">
+        <div class="col-lg-2 left-border">
           <button type="button" class='btn btn-warning' ng-hide='edit' ng-click='toggleEdit(); addToBag(item)'>Edit</button>
-          <button type="button" class='btn btn-warning' ng-show='edit' ng-click='toggleEdit(); addToBag(item)'>Save</button>
+          <button type="button" class='btn btn-warning' ng-show='edit' ng-click='toggleEdit(); addToBag(item); getItemsTotal()'>Save</button>
 
           <button type="button" class='btn btn-danger' ng-click='removeFromBag(item)'>Remove</button>
         </div>

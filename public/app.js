@@ -13,6 +13,16 @@ angular
         url: '/checkout',
         controller: 'CheckoutController',
         templateUrl: 'views/checkout.html'
+      })
+      .state('about', {
+        url: '/about',
+        controller: 'MainController',
+        templateUrl: 'views/about.html'
+      })
+      .state('contact', {
+        url: '/contact',
+        controller: 'MainController',
+        templateUrl: 'views/contact.html'
       });
     $locationProvider.html5Mode(true);
   }]);
