@@ -1,7 +1,8 @@
 angular
   .module('shoppingCart')
+  .filter('CurrencyFilter', CurrencyFilter);
 
-  .filter('CurrencyFilter', function() {
+  function CurrencyFilter() {
     return function(number) {
       if(isNaN(number) || number < 1) {
         return number;
@@ -9,4 +10,4 @@ angular
         return (number / 100).toFixed(2);
       }
     };
-  });
+  }

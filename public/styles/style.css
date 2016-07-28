@@ -1,5 +1,11 @@
 body {
-  background-color: #E9EBEE
+  background-color: #E9EBEE;
+  font-family: 'Gentium Basic', serif;
+  font-size: 1.5rem;
+}
+
+.welcome-font {
+  font-family: 'Raleway', sans-serif;
 }
 
 .hero {
@@ -61,4 +67,13 @@ li {
 
 .no-padding {
   padding-bottom: none;
+}
+
+.about-tea-images {
+  height: 35rem;
+  width: 35rem;
+  border-radius: 50%;
+  margin-top: 2rem;
+  /* offset-x | offset-y | blur-radius | spread-radius | color */
+  box-shadow: 3px 0px 4px 4px rgba(0, 0, 0, 0.1);
 }

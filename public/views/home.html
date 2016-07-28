@@ -3,36 +3,26 @@
     <div class="col-lg-12 table-top-names">
       <span>
         <label for="searchByCategory">Search by Category</label>
-        <select id='searchByCategory' ng-model='category'>
-          <option value='dark'>Dark</option>
-          <option value='cold'>Cold</option>
-          <option value='awesome'>Awesome</option>
-          <option value='dry'>Dry</option>
-          <option value='hot'>Hot</option>
-          <option value='summer'>Summer</option>
-          <option value='lucid'>Lucid</option>
-          <option value='warm'>Warm</option>
-          <option value='winter'>Winter</option>
-          <option value='spring'>Spring</option>
+        <select id='searchByCategory' ng-model='categorySort'>
+          <option ng-repeat='category in categories' value='{{ category }}'>{{ category }}</option>
         </select>
-
         <label for="searchByName">Search by name: </label>
         <input type='text' id='searchByName' ng-model='searchText'>
-
-        <button type="button" class='btn btn-danger pull-right' ui-sref='checkout'>Checkout | Bag: {{ totalQuantity() }}</button>
+        <button type="button"
+                class='btn btn-danger pull-right'
+                ui-sref='checkout'>
+                Checkout | Bag: {{ totalQuantity() }}
+        </button>
       </span>
     </div>
-
     <div class="row margin-top">
       <div class="col-lg-3">
         <h4 class='padding-left'>Tea</h4>
       </div>
-
       <div class="col-lg-9">
         <div class="col-lg-9">
           <h4 class='padding-left'>Information</h4>
         </div>
-
         <div class="col-lg-3">
           <span class='pull-right'>
             <label for='searchByPrice'>Sort by Price: </label>
@@ -43,11 +33,10 @@
           </span>
         </div>
       </div>
-
     </div>
-    <!-- Angular data below -->
-
-    <ul ng-repeat='item in teaData | orderBy: price | orderBy: category | filter: searchText' class='light-grey-borders div-background' >
+    <!-- Angular rendered data -->
+    <ul ng-repeat='item in teaData | orderBy: price | filter: categorySort | filter: searchText'
+        class='light-grey-borders div-background' >
       <div class="row">
         <div class="col-lg-3">
           <li><img ng-src="{{ item.imageUrl }}" alt="No Photo Available"></li>
@@ -72,13 +61,13 @@
                 <option value='2'>2</option>
                 <option value='3'>3</option>
               </select>
-              <button type="button" class="btn btn-warning" ng-click='addToBag(item)'>Add to Bag</button>
+              <button type="button" class="btn btn-warning" ng-click='addToBag(item)'>
+                Add to Bag
+              </button>
             </span>
           </div>
         </div>
       </div>
     </ul>
-
-
   </div>
 </div>

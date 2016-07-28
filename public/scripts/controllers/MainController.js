@@ -1,16 +1,23 @@
-angular
-  .module('shoppingCart')
+(function() {
+  'use strict';
 
-  .controller('MainController', ["$scope", "$stateParams", "ShoppingCart", function($scope, $stateParams, ShoppingCart) {
-    $scope.view = {};
-    $scope.teaData = dataArray;
+  angular
+    .module('shoppingCart')
+    .controller('MainController', MainController);
 
-    $scope.totalQuantity = function() {
-      return ShoppingCart.getCheckoutQuantity();
-    };
+    MainController.$inject = ["$scope", "$stateParams", "ShoppingCart"];
 
-    $scope.addToBag = function(item) {
-      ShoppingCart.addToBag(item);
-    };
+      function MainController($scope, $stateParams, ShoppingCart) {
+        $scope.view = {};
+        $scope.teaData = dataArray;
+        $scope.categories = ShoppingCart.getCategories();
 
-  }]);
+        $scope.totalQuantity = function() {
+          return ShoppingCart.getCheckoutQuantity();
+        };
+
+        $scope.addToBag = function(item) {
+          ShoppingCart.addToBag(item);
+        };
+      }
+})();

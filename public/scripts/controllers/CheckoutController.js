@@ -1,24 +1,37 @@
-angular
-  .module('shoppingCart')
+(function() {
+  'use strict';
 
-  .controller('CheckoutController', ["$scope", "$http", "$stateParams", "ShoppingCart", function($scope, $http, $stateParams, ShoppingCart) {
-    $scope.view = {};
+  angular
+    .module('shoppingCart')
+    .controller('CheckoutController', CheckoutController);
 
-    $scope.edit = false;
-    $scope.toggleEdit = function() {
-      if (this.edit === false) {
-        this.edit = true;
-      } else {
-        this.edit = false;
+      CheckoutController.$inject = ["$scope", "$http", "$stateParams", "ShoppingCart"];
+
+      function CheckoutController ($scope, $http, $stateParams, ShoppingCart) {
+        $scope.view = {};
+        $scope.checkoutItems = ShoppingCart.getItems();
+        $scope.edit = false;
+
+        $scope.$watch(function() {
+          return ShoppingCart.change;
+        }, function() {
+          $scope.getItemsTotal = ShoppingCart.getItemsTotal();
+        });
+
+        $scope.toggleEdit = function() {
+          if (this.edit === false) {
+            this.edit = true;
+          } else {
+            this.edit = false;
+          }
+        };
+
+        $scope.editBag = function(item) {
+          ShoppingCart.editBag(item);
+        };
+
+        $scope.removeFromBag = function(item) {
+          ShoppingCart.removeFromBag(item);
+        };
       }
-    };
-
-    $scope.checkoutItems = ShoppingCart.getItems();
-
-    $scope.getItemsTotal = ShoppingCart.getItemsTotal();
-
-    $scope.removeFromBag = function(item) {
-      ShoppingCart.removeFromBag(item);
-    };
-
-  }]);
+})();
